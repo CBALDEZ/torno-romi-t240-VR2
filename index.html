@@ -270,13 +270,22 @@
         look-controls="pointerLockEnabled: false"
         wasd-controls="enabled: false">
 
-        <a-entity
-          cursor="rayOrigin: entity; fuse: false"
-          raycaster="objects: .clickable; far: 10"
-          position="0 0 -1"
-          geometry="primitive: ring; radiusInner: 0.012; radiusOuter: 0.02"
-          material="shader: flat; color: #00FFCC">
-        </a-entity>
+     <a-entity
+       cursor="fuse: true; fuseTimeout: 1500"
+       raycaster="objects: .clickable; far: 10"
+       position="0 0 -1"
+       geometry="primitive: ring; radiusInner: 0.012; radiusOuter: 0.02"
+       material="shader: flat; color: #00FFCC">
+ 
+        <a-animation
+       attribute="scale"
+       begin="fusing"
+       dur="1500"
+       from="1 1 1"
+       to="0.2 0.2 0.2">
+     </a-animation>
+
+</a-entity>
 
       </a-camera>
 
